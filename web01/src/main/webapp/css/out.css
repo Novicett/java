@@ -1,0 +1,7 @@
+@charset "UTF-8";
+
+body {
+	background: lime; /* 컨트롤 + 시프트 +/(자동주석) */
+	color: blue; /* 글자색 지정 */
+	text-align: center;
+}

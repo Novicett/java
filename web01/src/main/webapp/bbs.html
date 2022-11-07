@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>게시판 글쓰기</title>
+<style type="text/css">
+body {
+	background: lime;
+}
+</style>
+</head>
+<body>
+	<form action="insert2.jsp">
+		<h3>게시판 글쓰기 화면입니다.</h3>
+		<table>
+			<tr>
+				<td>게시판 id:</td>
+				<td><input type="text" name="id"><br></td>
+			</tr>
+			<tr>
+				<td>게시판 title:</td>
+				<td><input type="text" name="title"><br></td>
+			</tr>
+			<tr>
+				<td>게시판 content:</td>
+				<td><input type="text" name="content"><br></td>
+			</tr>
+			<tr>
+				<td>게시판 writer:</td>
+				<td><input type="text" name="writer"><br></td>
+			</tr>
+			<tr>
+				<td>
+					<button>게시판 글작성 처리</button>
+				</td>
+			</tr>
+
+		</table>
+	</form>
+	<hr>
+
+	<form action="insert2.jsp">
+		<h3>게시판 삭제하기 화면입니다.</h3>
+		<table>
+			<tr>
+				<td>게시판 id:</td>
+				<td><input type="text" name="id"><br></td>
+			</tr>
+			<tr>
+				<td>
+					<button>게시판 삭제</button>
+				</td>
+			</tr>
+		</table>
+	</form>
+	<hr>
+	
+	<form action="insert2.jsp">
+		<h3>게시판 수정을 위한 화면입니다.</h3>
+		<table>
+			<tr>
+				<td>게시판 id:</td>
+				<td><input type="text" name="id"><br></td>
+			</tr>
+			<tr>
+				<td>게시판 content:</td>
+				<td><input type="text" name="content"><br></td>
+			</tr>
+			<tr>
+				<td>
+					<button>게시판 수정</button>
+				</td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>
