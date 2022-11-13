@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function length(){
+		le=document.getElementById('le').value
+		if(le.length>5){
+			result='5글	자 이상입니다. 유효합니다.'
+		}else{
+			result = '5글자 미만입니다. 다시 입력해주세요.'
+		}
+		di=document.getElementById("result");
+		di.innerHTML =result;
+	}
+	
+	function check(){
+		pw=document.getElementById('pw').value
+		pw2=document.getElementById('pw2').value
+		if(pw==pw2){
+			result="일치!!"
+		}else{
+			result="불일치!!"
+		}
+		result2=document.getElementById('result2')
+		result2.innerHTML=result;
+	}
+</script>
+</head>
+<body>
+아이디 : <input id="le"> 
+<button onclick="length()">글자수 체크</button> <br>
+<div id="result"></div>
+패스워드 : <input id="pw"> <br>
+패스워드2 : <input id="pw2"> <button onclick="check()">패스워드 동일</button>
+<div id="result2">
+</div>
+</body>
+</html>

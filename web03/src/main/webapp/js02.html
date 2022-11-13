@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	//id, pw를 입력받아서 id가 root, pw가 1234인지 판별, 로그인성공, 로그인실패 
+	function login() {
+		//입력
+		//element(엘리먼트는 tag의 정식이름)
+		//getElementById 아이디로 tag를 찾아서 가지고 와요!
+		id = document.getElementById('user').value
+		pw = document.getElementById('pw').value
+		
+		if (id =='root' && pw=='1234') {
+			alert('로그인성공');
+		}else{
+			alert('로그인실패');
+		}	
+	}
+	function age(){
+		year = document.getElementById('year').value // 입력값은 무조건 String
+		year2= parseInt(year);
+		age=2022 - year2+1;
+		alert(age+"살")
+	}
+	function rec(){
+		width = document.getElementById('w').value
+		height = document.getElementById('h').value
+		width2 = parseFloat(width);
+		height2 = parseFloat(height);
+		alert(width2*height2);
+	}	
+</script>
+</head>
+<body>
+아이디 입력 : <input id='user' type="text"> <br> <!-- id -js(브라우저용), name-form(서버용) -->
+패스워드 입력 : <input id='pw' type="text"> <br>
+<button onclick="login()">로그인 처리</button>
+
+<br>
+나이 계산(태어난 연도) : <input id='year'><br>
+<button onclick="age()">나이 계산 처리</button><br>
+
+가로길이 : <input id="w"> <br>
+세로길이 : <input id="h"> <br>
+<button onclick="rec()">사각형의 면적 구하기 처리(실수입력)</button>
+</body>
+</html>
