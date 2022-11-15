@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js">
+	
+</script>
+
+<script>
+	$(function() { //익명함수
+		$("#b1").click(function() {
+			$.ajax({
+				url : "data/rank.xml",
+				success : function(x) {
+					//x에 ok.html의 내용이 들어감
+					//성공했을 때 실행할 부분
+					alert('성공 , 받은 데이터는' + x)
+					$("#d1").html('성공 , 받은 데이터는' + x+"<br>")
+					list=$(x).find('rank') //find결과가 여러개 => 배열
+					alert(list.length+"개")
+					for(var i =0; i<list.length; i++){
+						name=$(list[i]).find('name').text()
+						tel=$(list[i]).find('tel').text()
+						$('#d1').append(name+ " "+tel + "<br>")
+					}
+				},
+				error : function(e) {
+					//e에 ok.html에서 발생한 에러 들어감.
+					//실패했을 때 실행할 부분
+					alert('실패 실패의 내용' + e)
+				}
+			})
+		})
+		$("#b3").click(function(){
+			$.ajax({
+				url : "data/rank3.xml",
+				success : function(z){
+					list = $(z).find('winner')
+					for (var i = 0; i < list.length; i++) {
+						year = $(list[i]).find('year').text()
+						class2 = $(list[i]).find('class2').text()
+						name = $(list[i]).find('name').text()
+						field = $(list[i]).find('field').text()
+						$('#d3').append(year+ " "+class2 + " "+name+ " "+field+ " "+ "<br>")	
+					}
+				}
+			})
+		})
+		
+		$("#b4").click(function() {
+			$.ajax({
+				url : "data/dataset.xml",
+				success : function(x) {
+					//x에 ok.html의 내용이 들어감
+					//성공했을 때 실행할 부분
+					alert('성공 , 받은 데이터는' + x)
+					$("#d4").html('성공 , 받은 데이터는' + x+"<br>")
+					list=$(x).find('record') //find결과가 여러개 => 배열
+					alert(list.length+"개")
+					for(var i =0; i<list.length; i++){
+						id=$(list[i]).find('id').text()
+						first_name=$(list[i]).find('first_name').text()
+						last_name=$(list[i]).find('last_name').text()
+						email=$(list[i]).find('email').text()
+						gender=$(list[i]).find('gender').text()						
+						$('#d4').append(id+ " "+first_name+" " +last_name+" " + email +" "+gender +  "<br>")
+					}
+				},
+				error : function(e) {
+					//e에 ok.html에서 발생한 에러 들어감.
+					//실패했을 때 실행할 부분
+					alert('실패 실패의 내용' + e)
+				}
+			})
+		}) //b4
+		$("#b2").click(function() {
+			$.ajax({
+				url : "data/rank.json",
+				success : function(x) {
+					//x에 ok.html의 내용이 들어감
+					//성공했을 때 실행할 부분
+					alert('성공 , 받은 데이터는' + x)
+					$("#d2").html('성공 , 받은 데이터는' + x+"<br>")
+					list=x.rank //받은 데이터에서 rank키의 값을 리스트(배열)로 추출 
+					alert(list.length+"개")
+					for(var i =0; i<list.length; i++){
+						name = list[i].name
+						tel = list[i].tel
+						$('#d2').append(name+" "+tel+"<br>")
+					}
+				},
+				error : function(e) {
+					//e에 ok.html에서 발생한 에러 들어감.
+					//실패했을 때 실행할 부분
+					alert('실패 실패의 내용' + e)
+				}
+			})
+		})//b2
+		
+		$("#b5").click(function() {
+			$.ajax({
+				url : "data/MOCK_DATA.json",
+				success : function(k) {
+					//x에 ok.html의 내용이 들어감
+					//성공했을 때 실행할 부분
+					alert('성공 , 받은 데이터는' + k)
+					$("#d5").html('성공 , 받은 데이터는' + k+"<br>")
+					list=k //받은 데이터에서 rank키의 값을 리스트(배열)로 추출 
+					alert(list.length+"개")
+					for(i =0; i<list.length; i++){
+						id2 = list[i].id
+						name2 = list[i].name
+						email2 = list[i].email
+						$('#d5').append(id2+" "+name2+" "+email2+"<br>")
+					}
+				},
+				error : function(e) {
+					//e에 ok.html에서 발생한 에러 들어감.
+					//실패했을 때 실행할 부분
+					alert('실패 실패의 내용' + e)
+				}
+			})
+		})//b5
+	})	
+</script>
+</head>
+<body>
+	<button id="b1">XML받아오기</button>
+	<button id="b2">JSON받아오기</button>
+	<button id="b3">XML받아오기2</button>
+	<button id="b4">mockaroo sample 받아오기</button>
+	<button id="b5">mockaroo sample 받아오기(JSON)</button>
+	<hr>
+	<div id="d1" style="background: yellow"></div>
+	<br>
+	<div id="d2" style="background: pink"></div>
+	<br>
+	<div id="d3" style="background: green"></div>	
+	<br>
+	<div id="d4" style="background: lib"></div>
+	<br>
+	<div id="d5" style="background: blue"></div>
+	
+</body>
+</html>
