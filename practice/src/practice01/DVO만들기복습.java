@@ -14,6 +14,7 @@ public class DVO만들기복습 {
 	public String getTitle() {
 		return title;
 	}
+	
 	public void setTitle(String title) {
 		this.title = title;
 	}
@@ -29,6 +30,11 @@ public class DVO만들기복습 {
 	public void setActor(String actor) {
 		this.actor = actor;
 	}
+	@Override
+	public String toString() {
+		return "DVO만들기복습 [id=" + id + ", title=" + title + ", content=" + content + ", actor=" + actor + "]";
+	}
+
 	
  	
 

@@ -14,12 +14,10 @@ public class DAO만들기복습 {
 		Connection con = DriverManager.getConnection(url,user,password);
 		//db연결 성공
 		
-		String sql="INSERT INTO MOVIE VALUES(?,?,?,?)";
+		String sql="UPDATE MOVIE SET CONTENT=? WHERE ID=?";
 		PreparedStatement ps = con.prepareStatement(sql);
-		ps.setInt(1, bag.getId());
-		ps.setString(2, bag.getTitle());
-		ps.setString(3, bag.getContent());
-		ps.setString(4, bag.getActor());
+		ps.setInt(2, bag.getId());
+		ps.setString(1, bag.getContent());
 		int result= ps.executeUpdate();
 	
 	}
